@@ -14,16 +14,21 @@
 //新闻摘要
 @property (nonatomic, copy) NSString *digest;
 //跟帖数量
-@property (nonatomic, copy) NSString *replyCount;
+@property (nonatomic, assign ) int replyCount;
 //图片的地址
 @property (nonatomic, copy) NSString *imgsrc;
 
+//多组图片
+@property (nonatomic, strong) NSArray *imgextra;
+
+//大图
+@property (nonatomic, assign, getter=isBigImage) BOOL imgType;
  //字典转模型
 +(instancetype)newsWithDict:(NSDictionary *)dict;
 
 
 //下载数据的信息，只是一个测试
-+ (void)loadNewsListWithURLString:(NSString *)pathURL;
++ (void)loadNewsListWithURLString:(NSString *)pathURL finised:(void (^)(NSArray *newsInfo))finised;
 
 
 @end

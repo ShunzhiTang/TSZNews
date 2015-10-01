@@ -14,4 +14,5 @@
 
 @property (nonatomic, strong) TSZModels *models;
 
++(NSString *)cellIdentifier:(TSZModels *)model;
 @end

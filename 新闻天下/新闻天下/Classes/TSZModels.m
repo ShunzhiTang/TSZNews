@@ -80,7 +80,10 @@ const char *kPropertiesKey = "kPropertiesKey";
 }
 
 //一般把数据的数组都放在model
-+ (void)loadNewsListWithURLString:(NSString *)pathURL{
++ (void)loadNewsListWithURLString:(NSString *)pathURL finised:(void (^)(NSArray *))finised{
+    //加入断言
+    NSAssert(finised !=nil, @"必须传入回调");
+    
     [[TSZNetWorkingTools sharedNetTools] GET:pathURL parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary * responseObject) {
         //首先这个路径下的网页是json数据，数组中有很多的字典
         NSArray *array = responseObject[responseObject.keyEnumerator.nextObject];
@@ -93,6 +96,10 @@ const char *kPropertiesKey = "kPropertiesKey";
         for (NSDictionary *dict in array) {
             [arrayM addObject:[self newsWithDict:dict]];
         }
+        
+        //回调
+        finised(arrayM.copy);
+        
         
         NSLog(@"%@",arrayM);
         

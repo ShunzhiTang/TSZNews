@@ -7,8 +7,8 @@
 //
 
 #import "TSZNewsInfoCell.h"
-
-
+#import "TSZModels.h"
+#import "UIImageView+AFNetworking.h"
 @interface TSZNewsInfoCell()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImage;
 
@@ -17,23 +17,57 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *replayCountLabel;
 
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *moreImageView;
+
+
+
 @end
 
 
 @implementation TSZNewsInfoCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    
+    //设置换行宽度
+    self.digestLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - CGRectGetMaxX(self.iconImage.frame) - 50;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 #pragma 重写set方法
+- (void)setModels:(TSZModels *)models{
+    _models = models;
+    //设置显示信息
+    self.titleLabel.text = models.title;
+    self.digestLabel.text = models.digest;
+    self.replayCountLabel.text = [NSString stringWithFormat:@"%d",models.replyCount];
+    
+    //图片 等会实现
+    [self.iconImage setImageWithURL:[NSURL URLWithString:models.imgsrc]];
+    
+    //判断模型是否带多图
+    if (models.imgextra.count == 2) {
+        int index = 0;
+        for (UIImageView *iv in self.moreImageView) {
+            NSString *urlString = models.imgextra[index][@"imgsrc"];
+            
+            NSURL *url = [NSURL URLWithString:urlString];
+            
+            //设置图像
+            [iv setImageWithURL:url];
+            index++;
+        }
+    }
+}
 
-
++(NSString *)cellIdentifier:(TSZModels *)model{
+    if (model.imgextra.count == 2) {
+        return @"moreImageCell";
+    }
+    
+    if (model.isBigImage){
+        return @"bigImageCell";
+    }
+    return @"newsCell";
+}
 
 @end
