@@ -72,9 +72,6 @@ const char *kPropertiesKey = "kPropertiesKey";
 }
 
 
-
-
-
 //重写NSLog的输出方法description
 - (NSString *)description{
     NSArray *arr = @[@"title", @"digest" , @"replyCount" ,  @"imgsrc"];

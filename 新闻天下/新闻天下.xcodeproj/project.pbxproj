@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048B69301BBCF78A00784E51 /* TSZNewsInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B692F1BBCF78A00784E51 /* TSZNewsInfoCell.m */; };
 		04F0CC031BBCB436004C8D67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC021BBCB436004C8D67 /* main.m */; };
 		04F0CC061BBCB436004C8D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC051BBCB436004C8D67 /* AppDelegate.m */; };
 		04F0CC0E1BBCB436004C8D67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F0CC0D1BBCB436004C8D67 /* Images.xcassets */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048B692E1BBCF78A00784E51 /* TSZNewsInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZNewsInfoCell.h; sourceTree = "<group>"; };
+		048B692F1BBCF78A00784E51 /* TSZNewsInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZNewsInfoCell.m; sourceTree = "<group>"; };
 		04F0CBFD1BBCB436004C8D67 /* 新闻天下.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新闻天下.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F0CC011BBCB436004C8D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F0CC021BBCB436004C8D67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				04F0CC621BBCC104004C8D67 /* Main.storyboard */,
+				048B692E1BBCF78A00784E51 /* TSZNewsInfoCell.h */,
+				048B692F1BBCF78A00784E51 /* TSZNewsInfoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				04F0CC421BBCB639004C8D67 /* AFURLSessionManager.m in Sources */,
 				04F0CC061BBCB436004C8D67 /* AppDelegate.m in Sources */,
 				04F0CC691BBCC34F004C8D67 /* TSZNetWorkingTools.m in Sources */,
+				048B69301BBCF78A00784E51 /* TSZNewsInfoCell.m in Sources */,
 				04F0CC031BBCB436004C8D67 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +599,7 @@
 				04F0CC221BBCB436004C8D67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04F0CC231BBCB436004C8D67 /* Build configuration list for PBXNativeTarget "新闻天下Tests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +608,7 @@
 				04F0CC251BBCB436004C8D67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
