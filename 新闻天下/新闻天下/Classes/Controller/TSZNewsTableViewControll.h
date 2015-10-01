@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TSZNewsTableViewControll.h
 //  新闻天下
 //
 //  Created by mac on 15-9-30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TSZNewsTableViewControll : UITableViewController
 
 @end
-
