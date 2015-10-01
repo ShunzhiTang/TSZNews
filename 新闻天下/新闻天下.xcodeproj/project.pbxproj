@@ -31,6 +31,9 @@
 		04F0CC5C1BBCB64B004C8D67 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC541BBCB64B004C8D67 /* UIWebView+AFNetworking.m */; };
 		04F0CC631BBCC104004C8D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0CC621BBCC104004C8D67 /* Main.storyboard */; };
 		04F0CC661BBCC145004C8D67 /* TSZNewsTableViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC651BBCC145004C8D67 /* TSZNewsTableViewControll.m */; };
+		04F0CC691BBCC34F004C8D67 /* TSZNetWorkingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC681BBCC34F004C8D67 /* TSZNetWorkingTools.m */; };
+		04F0CC6D1BBCC975004C8D67 /* TSZModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC6C1BBCC975004C8D67 /* TSZModels.m */; };
+		04F0CC711BBCD253004C8D67 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC701BBCD253004C8D67 /* NSArray+Log.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,12 @@
 		04F0CC621BBCC104004C8D67 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04F0CC641BBCC145004C8D67 /* TSZNewsTableViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZNewsTableViewControll.h; sourceTree = "<group>"; };
 		04F0CC651BBCC145004C8D67 /* TSZNewsTableViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZNewsTableViewControll.m; sourceTree = "<group>"; };
+		04F0CC671BBCC34F004C8D67 /* TSZNetWorkingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZNetWorkingTools.h; sourceTree = "<group>"; };
+		04F0CC681BBCC34F004C8D67 /* TSZNetWorkingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZNetWorkingTools.m; sourceTree = "<group>"; };
+		04F0CC6B1BBCC975004C8D67 /* TSZModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSZModels.h; path = "新闻天下/Classes/TSZModels.h"; sourceTree = SOURCE_ROOT; };
+		04F0CC6C1BBCC975004C8D67 /* TSZModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSZModels.m; path = "新闻天下/Classes/TSZModels.m"; sourceTree = SOURCE_ROOT; };
+		04F0CC6F1BBCD253004C8D67 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		04F0CC701BBCD253004C8D67 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +143,7 @@
 		04F0CBFF1BBCB436004C8D67 /* 新闻天下 */ = {
 			isa = PBXGroup;
 			children = (
+				04F0CC6E1BBCD253004C8D67 /* Log二进制转string */,
 				04F0CC5D1BBCC097004C8D67 /* Classes */,
 				04F0CC431BBCB64B004C8D67 /* UIKit+AFNetworking */,
 				04F0CC261BBCB638004C8D67 /* AFNetworking */,
@@ -245,6 +255,8 @@
 		04F0CC5F1BBCC097004C8D67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04F0CC6B1BBCC975004C8D67 /* TSZModels.h */,
+				04F0CC6C1BBCC975004C8D67 /* TSZModels.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +264,8 @@
 		04F0CC601BBCC097004C8D67 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04F0CC671BBCC34F004C8D67 /* TSZNetWorkingTools.h */,
+				04F0CC681BBCC34F004C8D67 /* TSZNetWorkingTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -262,6 +276,15 @@
 				04F0CC621BBCC104004C8D67 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04F0CC6E1BBCD253004C8D67 /* Log二进制转string */ = {
+			isa = PBXGroup;
+			children = (
+				04F0CC6F1BBCD253004C8D67 /* NSArray+Log.h */,
+				04F0CC701BBCD253004C8D67 /* NSArray+Log.m */,
+			);
+			path = "Log二进制转string";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,10 +389,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F0CC3A1BBCB639004C8D67 /* AFHTTPRequestOperation.m in Sources */,
+				04F0CC6D1BBCC975004C8D67 /* TSZModels.m in Sources */,
 				04F0CC591BBCB64B004C8D67 /* UIImageView+AFNetworking.m in Sources */,
 				04F0CC3B1BBCB639004C8D67 /* AFHTTPRequestOperationManager.m in Sources */,
 				04F0CC5A1BBCB64B004C8D67 /* UIProgressView+AFNetworking.m in Sources */,
 				04F0CC3D1BBCB639004C8D67 /* AFNetworkReachabilityManager.m in Sources */,
+				04F0CC711BBCD253004C8D67 /* NSArray+Log.m in Sources */,
 				04F0CC411BBCB639004C8D67 /* AFURLResponseSerialization.m in Sources */,
 				04F0CC3F1BBCB639004C8D67 /* AFURLConnectionOperation.m in Sources */,
 				04F0CC581BBCB64B004C8D67 /* UIButton+AFNetworking.m in Sources */,
@@ -384,6 +409,7 @@
 				04F0CC551BBCB64B004C8D67 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				04F0CC421BBCB639004C8D67 /* AFURLSessionManager.m in Sources */,
 				04F0CC061BBCB436004C8D67 /* AppDelegate.m in Sources */,
+				04F0CC691BBCC34F004C8D67 /* TSZNetWorkingTools.m in Sources */,
 				04F0CC031BBCB436004C8D67 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
