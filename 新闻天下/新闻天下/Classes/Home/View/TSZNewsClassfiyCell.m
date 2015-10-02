@@ -11,8 +11,6 @@
 /**
  *  导入新闻的版块
  */
-
-
 @interface TSZNewsClassfiyCell()
 
 
@@ -49,8 +47,6 @@
     _urlString = urlString;
     self.newsVc.urlString = urlString;
 }
-
-
 
 
 @end

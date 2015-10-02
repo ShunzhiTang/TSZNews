@@ -26,10 +26,33 @@
     
     //根据字体大小设置
     [lab sizeToFit];
-    
     //小字体
     lab.font = [UIFont systemFontOfSize:normalFontSize];
+    
+    //允许交互
+    [lab setUserInteractionEnabled:YES];
     return lab;
 }
 
+- (void)setScale:(float)scale{
+    
+    float per = (selectFontSize - normalFontSize) / normalFontSize;
+    per = per *scale + 1;
+    //通过transfrom设置大小
+    self.transform = CGAffineTransformMakeScale(per, per);
+    
+    //设置颜色
+    self.textColor = [[UIColor alloc]initWithRed:scale green:0 blue:0 alpha:1.0];
+}
+
+//可以实现点击 切换下面的collection
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+
+    if ([self.delegate respondsToSelector:@selector(topLabelDidSelected:)]) {
+        [self.delegate topLabelDidSelected:self];
+    }
+}
+
 @end
+
+

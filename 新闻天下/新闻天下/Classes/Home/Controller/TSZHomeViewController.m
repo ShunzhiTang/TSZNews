@@ -11,7 +11,7 @@
 #import "TSZTopLabel.h"
 #import "TSZNewsClassfiyCell.h"
 
-@interface TSZHomeViewController ()<UICollectionViewDataSource , UICollectionViewDelegate>
+@interface TSZHomeViewController ()<UICollectionViewDataSource , UICollectionViewDelegate ,TSZTopLabelDelegate>
 
 //数据
 @property (nonatomic, strong) NSArray *newsClassfyList;
@@ -24,6 +24,7 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet UICollectionViewFlowLayout *layout;
 
+@property (nonatomic , assign)NSInteger currentIndex;
 @end
 
 @implementation TSZHomeViewController
@@ -32,8 +33,7 @@
     [super viewDidLoad];
    //设置好新闻头部
     [self setupChannel];
-    
-    
+    self.view.backgroundColor = [UIColor cyanColor];
 }
 
 
@@ -77,7 +77,6 @@
     return _newsClassfyList;
 }
 
-
 #pragma mark设置流水布局
 
 - (void)setUpLayout{
@@ -104,7 +103,7 @@
     CGFloat margin = 8.0;
     CGFloat x = margin;
     CGFloat h = self.progressNews.bounds.size.height;
-    
+    NSInteger index = 0;
     //循环遍历添加 label
     for(TSZNewsClassfiyModel *che in self.newsClassfyList){
         //算出width
@@ -112,10 +111,14 @@
         
         //设置位置
         lab.frame = CGRectMake(x, 0, lab.bounds.size.width, h);
+        lab.tag = index;
+        //设置代理
+        lab.delegate = self;
         
         //dizeeng
         x += lab.bounds.size.width;
         
+        index++;
         //添加
         [self.progressNews addSubview:lab];
     }
@@ -123,7 +126,65 @@
     //设置滚动
     self.progressNews.contentSize = CGSizeMake(x+margin, h);
     
+    //设置第0项
+    TSZTopLabel *label = self.progressNews.subviews[0];
+    label.scale = 1;
+    
 }
 
+//怎样去确定当前滑动到了哪一个，使用滚动的代理方法
+#pragma mark滚动的代理方法,
+//只要滚动一下就调用
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //1、当前选中的标签
+    TSZTopLabel *currentLabel = self.progressNews.subviews[self.currentIndex];
+
+    //下一个标签
+    NSArray *indexPaths = [self.collectionView indexPathsForVisibleItems];
+    
+    //遍历数组确定写一个标签
+    TSZTopLabel *nextLabel = nil;
+    for(NSIndexPath *path in indexPaths){
+        if (path.item != self.currentIndex) {
+            nextLabel = self.progressNews.subviews[path.item];
+            break;
+        }
+    }
+    
+//    NSLog(@"从 %@到 %@",currentLabel.text , nextLabel.text);
+    //判断是否有下一个标签
+    if (nextLabel ==nil) {
+        return;
+    }
+    
+    //3、设置比例
+    float nextScale = ABS((float)self.collectionView.contentOffset.x / self.collectionView.bounds.size.width-self.currentIndex);
+    
+    float currentScale = 1 - nextScale;
+    
+    currentLabel.scale = currentScale;
+    nextLabel.scale = nextScale;
+    //强制更新索引
+    self.currentIndex = self.collectionView.contentOffset.x / self.collectionView.bounds.size.width;
+    
+}
+
+//当一个collection滚动完成后才执行这个方法
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //计算出当前的滚动的索引
+    
+    self.currentIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
+}
+
+#pragma mark 选择不同的界面 ， 出现对应的标题 协议方法
+- (void)topLabelDidSelected:(TSZTopLabel *)label{
+    self.currentIndex = label.tag;
+    //滚动指定位置
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:label.tag inSection:0];
+    
+    //滚动
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    
+}
 
 @end

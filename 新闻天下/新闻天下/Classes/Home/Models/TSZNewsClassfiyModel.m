@@ -33,14 +33,16 @@
     NSArray *array = dict[dict.keyEnumerator.nextObject];
     
     //5、遍历数组，字典转模型
-    
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:array.count];
     
     for(NSDictionary *dict in array){
         [arrayM addObject:[self objectWithDict:dict]];
     }
     
-    return arrayM.copy;
+    //根据tid进行排序
+    return [arrayM sortedArrayUsingComparator:^NSComparisonResult(TSZNewsClassfiyModel *obj1, TSZNewsClassfiyModel *obj2) {
+        return [obj1.tid compare:obj2.tid];
+    }];
 }
 
 //重写打印的方法

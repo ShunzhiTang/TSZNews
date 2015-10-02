@@ -40,7 +40,10 @@
     self.titleLabel.text = models.title;
     self.digestLabel.text = models.digest;
     self.replayCountLabel.text = [NSString stringWithFormat:@"%d",models.replyCount];
+    //在设置图像之前，先清空图像
     
+    self.iconImage.image = nil;
+//    self.iconImage = nil;
     //图片 等会实现
     [self.iconImage setImageWithURL:[NSURL URLWithString:models.imgsrc]];
     
@@ -53,6 +56,8 @@
             NSURL *url = [NSURL URLWithString:urlString];
             
             //设置图像
+            iv.image = nil;
+            
             [iv setImageWithURL:url];
             index++;
         }

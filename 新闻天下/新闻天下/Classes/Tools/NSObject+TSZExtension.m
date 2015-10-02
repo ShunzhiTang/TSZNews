@@ -34,8 +34,6 @@ const char *kPropertiesKey = "kPropertiesKey";
     return news;
 }
 
-
-
 //动态的加载类的属性
 + (NSArray *)loadNewsList{
     //获取关联对象
@@ -47,8 +45,6 @@ const char *kPropertiesKey = "kPropertiesKey";
     //类  属性计数指针
     unsigned int count = 0;
     objc_property_t *list = class_copyPropertyList([self class], &count);
-    
-    NSLog(@"属性的数量 ：%u",count);
     //遍历数组
     
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:count];
@@ -61,7 +57,6 @@ const char *kPropertiesKey = "kPropertiesKey";
         //添加到数组
         [arrayM addObject:[NSString stringWithUTF8String:name]];
     }
-    
     //释放对象
     free(list);
     
@@ -70,7 +65,6 @@ const char *kPropertiesKey = "kPropertiesKey";
     objc_setAssociatedObject(self, kPropertiesKey, arrayM, OBJC_ASSOCIATION_COPY_NONATOMIC);
     //返回数据
     return objc_getAssociatedObject(self, kPropertiesKey);
-    
 }
 
 @end
