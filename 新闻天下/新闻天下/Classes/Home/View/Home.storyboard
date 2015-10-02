@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lGI-9T-1t0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="oVR-Ay-uJU">
+            <objects>
+                <navigationController id="lGI-9T-1t0" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uXX-WK-JFs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5rb-m3-X59" kind="relationship" relationship="rootViewController" id="oq4-38-epU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0i4-0x-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703" y="336"/>
+        </scene>
+        <!--新闻天下-->
+        <scene sceneID="DQ4-fR-BGD">
+            <objects>
+                <viewController id="5rb-m3-X59" customClass="TSZHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sTp-r7-ZRp"/>
+                        <viewControllerLayoutGuide type="bottom" id="jNM-Ai-36H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RcG-oo-jQG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqw-Hd-hKE" userLabel="新闻列表">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUv-cQ-5Po" userLabel="滚动新闻目录">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="backgroundColor" red="0.79724619539999997" green="0.95294117649999999" blue="0.84193051720000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="fJ8-2s-zR3"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4gb-ex-XzX"/>
+                                    <constraint firstItem="fUv-cQ-5Po" firstAttribute="leading" secondItem="kqw-Hd-hKE" secondAttribute="leading" id="Z5j-Vh-ujJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fUv-cQ-5Po" secondAttribute="trailing" id="ehV-C4-xws"/>
+                                    <constraint firstItem="fUv-cQ-5Po" firstAttribute="top" secondItem="kqw-Hd-hKE" secondAttribute="top" id="zL8-Uk-nLG"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ksq-4n-fuE">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2Y-Pm-NbP">
+                                    <size key="itemSize" width="126" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="2f0-RW-YaZ" customClass="TSZNewsClassfiyCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5rb-m3-X59" id="oiT-0O-p3D"/>
+                                    <outlet property="delegate" destination="5rb-m3-X59" id="hhP-Md-uxT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ksq-4n-fuE" firstAttribute="leading" secondItem="RcG-oo-jQG" secondAttribute="leading" id="2E9-Y0-ZhE"/>
+                            <constraint firstItem="kqw-Hd-hKE" firstAttribute="top" secondItem="sTp-r7-ZRp" secondAttribute="bottom" id="C8m-dW-N37"/>
+                            <constraint firstItem="jNM-Ai-36H" firstAttribute="top" secondItem="Ksq-4n-fuE" secondAttribute="bottom" id="QiQ-aN-JiF"/>
+                            <constraint firstAttribute="trailing" secondItem="Ksq-4n-fuE" secondAttribute="trailing" id="axe-DX-Tpt"/>
+                            <constraint firstItem="Ksq-4n-fuE" firstAttribute="top" secondItem="kqw-Hd-hKE" secondAttribute="bottom" id="huu-7z-qIc"/>
+                            <constraint firstAttribute="trailing" secondItem="kqw-Hd-hKE" secondAttribute="trailing" id="sFR-DQ-4vO"/>
+                            <constraint firstItem="kqw-Hd-hKE" firstAttribute="leading" secondItem="RcG-oo-jQG" secondAttribute="leading" id="w6U-fB-xbe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="新闻天下" id="C4D-fH-6La"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ksq-4n-fuE" id="whW-Ss-zLn"/>
+                        <outlet property="layout" destination="t2Y-Pm-NbP" id="hMs-73-P4Q"/>
+                        <outlet property="progressNews" destination="fUv-cQ-5Po" id="ghD-DU-yXQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5WD-lh-Iyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-267.5" y="286.5"/>
+        </scene>
+    </scenes>
+</document>

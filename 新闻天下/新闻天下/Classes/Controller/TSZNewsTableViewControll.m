@@ -1,10 +1,5 @@
-//
-//  TSZNewsTableViewControll.m
-//  新闻天下
-//
 //  Created by mac on 15-9-30.
 //  Copyright (c) 2015年 tsz. All rights reserved.
-//
 
 #import "TSZNewsTableViewControll.h"
 #import "TSZModels.h"
@@ -27,13 +22,13 @@
 }
 
 //在这里想到：我们的数据在模型中加载完成的，那么要去实现数据的传输 ，就要想到block
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置预估高度
     self.tableView.estimatedRowHeight = 80;
     //注意cell中不可以有负的约束
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
     
     //防止循环引用
     __weak typeof(self) weakSelf = self;
@@ -57,19 +52,15 @@
     
     NSString *ID = [TSZNewsInfoCell cellIdentifier:model];
     
-    
     //创建cell
     TSZNewsInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     cell.models = model;
     
     return cell;
-    
 }
-
 //隐藏状态栏
 - (BOOL)prefersStatusBarHidden{
     return YES;
 }
-
 
 @end

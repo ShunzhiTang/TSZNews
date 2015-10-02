@@ -26,7 +26,6 @@
         //添加解析的数据类型
         // 如果需要添加，可以按照以下代码添加，`官方`推荐的方法！
         instance.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
-        
     });
     return instance;
 }

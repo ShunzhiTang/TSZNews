@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046353B81BBECBEB00AFCED0 /* TSZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046353B31BBECBEB00AFCED0 /* TSZHomeViewController.m */; };
+		046353B91BBECBEB00AFCED0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046353B71BBECBEB00AFCED0 /* Home.storyboard */; };
+		046353BC1BBECC6200AFCED0 /* TSZNewsClassfiyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046353BB1BBECC6200AFCED0 /* TSZNewsClassfiyCell.m */; };
+		046353BF1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046353BE1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.m */; };
+		046353C11BBED40800AFCED0 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 046353C01BBED40800AFCED0 /* topic_news.json */; };
+		046353C41BBED87900AFCED0 /* TSZTopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046353C31BBED87900AFCED0 /* TSZTopLabel.m */; };
 		048B69301BBCF78A00784E51 /* TSZNewsInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B692F1BBCF78A00784E51 /* TSZNewsInfoCell.m */; };
+		048DD1F11BBC97AD003EA7C5 /* NSObject+TSZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DD1F01BBC97AD003EA7C5 /* NSObject+TSZExtension.m */; };
 		04F0CC031BBCB436004C8D67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC021BBCB436004C8D67 /* main.m */; };
 		04F0CC061BBCB436004C8D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0CC051BBCB436004C8D67 /* AppDelegate.m */; };
 		04F0CC0E1BBCB436004C8D67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F0CC0D1BBCB436004C8D67 /* Images.xcassets */; };
@@ -48,8 +55,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046353B21BBECBEB00AFCED0 /* TSZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZHomeViewController.h; sourceTree = "<group>"; };
+		046353B31BBECBEB00AFCED0 /* TSZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZHomeViewController.m; sourceTree = "<group>"; };
+		046353B71BBECBEB00AFCED0 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		046353BA1BBECC6200AFCED0 /* TSZNewsClassfiyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZNewsClassfiyCell.h; sourceTree = "<group>"; };
+		046353BB1BBECC6200AFCED0 /* TSZNewsClassfiyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZNewsClassfiyCell.m; sourceTree = "<group>"; };
+		046353BD1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZNewsClassfiyModel.h; sourceTree = "<group>"; };
+		046353BE1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZNewsClassfiyModel.m; sourceTree = "<group>"; };
+		046353C01BBED40800AFCED0 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
+		046353C21BBED87900AFCED0 /* TSZTopLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZTopLabel.h; sourceTree = "<group>"; };
+		046353C31BBED87900AFCED0 /* TSZTopLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZTopLabel.m; sourceTree = "<group>"; };
 		048B692E1BBCF78A00784E51 /* TSZNewsInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZNewsInfoCell.h; sourceTree = "<group>"; };
 		048B692F1BBCF78A00784E51 /* TSZNewsInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZNewsInfoCell.m; sourceTree = "<group>"; };
+		048DD1EF1BBC97AD003EA7C5 /* NSObject+TSZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TSZExtension.h"; sourceTree = "<group>"; };
+		048DD1F01BBC97AD003EA7C5 /* NSObject+TSZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TSZExtension.m"; sourceTree = "<group>"; };
 		04F0CBFD1BBCB436004C8D67 /* 新闻天下.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新闻天下.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F0CC011BBCB436004C8D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F0CC021BBCB436004C8D67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +144,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046353B11BBECBEB00AFCED0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				046353B21BBECBEB00AFCED0 /* TSZHomeViewController.h */,
+				046353B31BBECBEB00AFCED0 /* TSZHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		046353B41BBECBEB00AFCED0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				046353C01BBED40800AFCED0 /* topic_news.json */,
+				046353BD1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.h */,
+				046353BE1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.m */,
+				046353C21BBED87900AFCED0 /* TSZTopLabel.h */,
+				046353C31BBED87900AFCED0 /* TSZTopLabel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		046353B51BBECBEB00AFCED0 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		046353B61BBECBEB00AFCED0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				046353B71BBECBEB00AFCED0 /* Home.storyboard */,
+				046353BA1BBECC6200AFCED0 /* TSZNewsClassfiyCell.h */,
+				046353BB1BBECC6200AFCED0 /* TSZNewsClassfiyCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		048DD1F21BBC9A4C003EA7C5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				046353B11BBECBEB00AFCED0 /* Controller */,
+				046353B41BBECBEB00AFCED0 /* Models */,
+				046353B51BBECBEB00AFCED0 /* Other */,
+				046353B61BBECBEB00AFCED0 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		04F0CBF41BBCB436004C8D67 = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +306,7 @@
 		04F0CC5D1BBCC097004C8D67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				048DD1F21BBC9A4C003EA7C5 /* Home */,
 				04F0CC5E1BBCC097004C8D67 /* Controller */,
 				04F0CC5F1BBCC097004C8D67 /* Model */,
 				04F0CC601BBCC097004C8D67 /* Tools */,
@@ -269,6 +338,8 @@
 			children = (
 				04F0CC671BBCC34F004C8D67 /* TSZNetWorkingTools.h */,
 				04F0CC681BBCC34F004C8D67 /* TSZNetWorkingTools.m */,
+				048DD1EF1BBC97AD003EA7C5 /* NSObject+TSZExtension.h */,
+				048DD1F01BBC97AD003EA7C5 /* NSObject+TSZExtension.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -374,7 +445,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F0CC631BBCC104004C8D67 /* Main.storyboard in Resources */,
+				046353B91BBECBEB00AFCED0 /* Home.storyboard in Resources */,
 				04F0CC111BBCB436004C8D67 /* LaunchScreen.xib in Resources */,
+				046353C11BBED40800AFCED0 /* topic_news.json in Resources */,
 				04F0CC0E1BBCB436004C8D67 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,9 +466,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046353C41BBED87900AFCED0 /* TSZTopLabel.m in Sources */,
+				048DD1F11BBC97AD003EA7C5 /* NSObject+TSZExtension.m in Sources */,
 				04F0CC3A1BBCB639004C8D67 /* AFHTTPRequestOperation.m in Sources */,
 				04F0CC6D1BBCC975004C8D67 /* TSZModels.m in Sources */,
 				04F0CC591BBCB64B004C8D67 /* UIImageView+AFNetworking.m in Sources */,
+				046353BC1BBECC6200AFCED0 /* TSZNewsClassfiyCell.m in Sources */,
 				04F0CC3B1BBCB639004C8D67 /* AFHTTPRequestOperationManager.m in Sources */,
 				04F0CC5A1BBCB64B004C8D67 /* UIProgressView+AFNetworking.m in Sources */,
 				04F0CC3D1BBCB639004C8D67 /* AFNetworkReachabilityManager.m in Sources */,
@@ -405,6 +481,7 @@
 				04F0CC581BBCB64B004C8D67 /* UIButton+AFNetworking.m in Sources */,
 				04F0CC561BBCB64B004C8D67 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				04F0CC3E1BBCB639004C8D67 /* AFSecurityPolicy.m in Sources */,
+				046353BF1BBED1AB00AFCED0 /* TSZNewsClassfiyModel.m in Sources */,
 				04F0CC5B1BBCB64B004C8D67 /* UIRefreshControl+AFNetworking.m in Sources */,
 				04F0CC5C1BBCB64B004C8D67 /* UIWebView+AFNetworking.m in Sources */,
 				04F0CC3C1BBCB639004C8D67 /* AFHTTPSessionManager.m in Sources */,
@@ -412,6 +489,7 @@
 				04F0CC401BBCB639004C8D67 /* AFURLRequestSerialization.m in Sources */,
 				04F0CC661BBCC145004C8D67 /* TSZNewsTableViewControll.m in Sources */,
 				04F0CC551BBCB64B004C8D67 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				046353B81BBECBEB00AFCED0 /* TSZHomeViewController.m in Sources */,
 				04F0CC421BBCB639004C8D67 /* AFURLSessionManager.m in Sources */,
 				04F0CC061BBCB436004C8D67 /* AppDelegate.m in Sources */,
 				04F0CC691BBCC34F004C8D67 /* TSZNetWorkingTools.m in Sources */,

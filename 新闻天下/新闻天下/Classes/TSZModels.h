@@ -23,8 +23,8 @@
 
 //大图
 @property (nonatomic, assign, getter=isBigImage) BOOL imgType;
- //字典转模型
-+(instancetype)newsWithDict:(NSDictionary *)dict;
+// //字典转模型
+//+(instancetype)newsWithDict:(NSDictionary *)dict;
 
 
 //下载数据的信息，只是一个测试
