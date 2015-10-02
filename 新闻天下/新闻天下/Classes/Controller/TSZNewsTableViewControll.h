@@ -10,4 +10,7 @@
 
 @interface TSZNewsTableViewControll : UITableViewController
 
+
+//网络数据的路径
+@property (nonatomic, strong) NSString *urlString;
 @end

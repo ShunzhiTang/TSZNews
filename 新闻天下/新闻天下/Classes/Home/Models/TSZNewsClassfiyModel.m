@@ -2,13 +2,20 @@
 //  TSZNewsClassfiyModel.m
 //  新闻天下
 //
-//  Created by mac on 15-10-2.
-//  Copyright (c) 2015年 tsz. All rights reserved.
-//
 
 #import "TSZNewsClassfiyModel.h"
 #import "NSObject+TSZExtension.h"
 @implementation TSZNewsClassfiyModel
+
+//由于我们的 切换控制器的路径保存在tid中，但是还需要组合 ，所以重写set方法
+- (void)setTid:(NSString *)tid{
+    _tid = tid.copy;
+    
+    NSString *string  = [NSString stringWithFormat:@"%@/0-40.html",_tid];
+    
+    _urlString = string;
+}
+
 
 //重写get方法，加载数据
 + (NSArray *)channelList{
@@ -21,6 +28,7 @@
     //3、反序列化
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     
+    
     //4、字典中得到数据,得到第一个数据
     NSArray *array = dict[dict.keyEnumerator.nextObject];
     
@@ -28,7 +36,7 @@
     
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:array.count];
     
-    for(NSDictionary *dict in arrayM){
+    for(NSDictionary *dict in array){
         [arrayM addObject:[self objectWithDict:dict]];
     }
     
@@ -44,7 +52,6 @@
     
      return [NSString stringWithFormat:@"<%@: %p> %@", self.class, self, dict];
 }
-
 
 
 

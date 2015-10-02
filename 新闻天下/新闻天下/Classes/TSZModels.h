@@ -27,6 +27,7 @@
 //+(instancetype)newsWithDict:(NSDictionary *)dict;
 
 
+
 //下载数据的信息，只是一个测试
 + (void)loadNewsListWithURLString:(NSString *)pathURL finised:(void (^)(NSArray *newsInfo))finised;
 

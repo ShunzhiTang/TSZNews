@@ -13,8 +13,10 @@
 
 //从分析中我可以知道，在那个如何分类的文件中 分类名和请求相对路径不同 ，所以建立下列模型
 @property (nonatomic , copy)NSString *tname;
-@property (nonatomic, strong) NSString *tid;
+@property (nonatomic, copy) NSString *tid;
 
+//写一个只读的路径
+@property (nonatomic, copy , readonly) NSString *urlString;
 
 //加载频道的所有数据
 

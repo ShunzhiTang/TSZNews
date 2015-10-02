@@ -21,6 +21,20 @@
     [self.tableView reloadData];
 }
 
+//路径的set方法
+- (void)setUrlString:(NSString *)urlString{
+    _urlString = urlString;
+    //先清空数据
+    self.newsList = nil;
+    
+    //防止循环引用
+    __weak typeof(self) weakSelf = self;
+    
+    [TSZModels  loadNewsListWithURLString:urlString finised:^(NSArray *newsInfo) {
+        weakSelf.newsList = newsInfo;
+    }];
+}
+
 //在这里想到：我们的数据在模型中加载完成的，那么要去实现数据的传输 ，就要想到block
 
 - (void)viewDidLoad {
@@ -29,13 +43,7 @@
     self.tableView.estimatedRowHeight = 80;
     //注意cell中不可以有负的约束
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    //防止循环引用
-    __weak typeof(self) weakSelf = self;
-    
-    [TSZModels  loadNewsListWithURLString:@"T1348647853363/0-20.html" finised:^(NSArray *newsInfo) {
-        weakSelf.newsList = newsInfo;
-    }];
+   
     
 }
 

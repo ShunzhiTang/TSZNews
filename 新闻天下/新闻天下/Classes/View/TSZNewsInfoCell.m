@@ -59,7 +59,7 @@
     }
 }
 
-+(NSString *)cellIdent9ifier:(TSZModels *)model{
++(NSString *)cellIdentifier:(TSZModels *)model{
     if (model.imgextra.count == 2) {
         return @"moreImageCell";
     }

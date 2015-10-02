@@ -27,7 +27,7 @@ const char *kPropertiesKey = "kPropertiesKey";
     for (NSString *key  in array) {
         //如果key存在就进行字典转模型
         if(dict[key] != nil){
-            [news setValue:dict[key] forKeyPath:key];
+            [news setValue:dict[key] forKey:key];
         }
     }
     
