@@ -55,8 +55,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     //测试
     TSZNewsClassfiyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
-    //设置颜色
-    cell.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256)/255.0) green:((float)arc4random_uniform(256)/255.0) blue:((float)arc4random_uniform(256)/255.0) alpha:1.0];
+
     cell.urlString = [self.newsClassfyList[indexPath.item] urlString];
     
     if (![self.childViewControllers containsObject:cell.newsVc]) {
@@ -174,11 +173,29 @@
     //计算出当前的滚动的索引
     
     self.currentIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    
+    //滚动停止标签居中， 计算当前选中标签的中心店
+    /**
+     *  意思就是当标题的滑动出现新的内容，我们就让当前显示的内容和标题的内容同步，并且在屏幕的中间  ， 超过后，9个标签 第五个就是当前的
+     */
+    TSZTopLabel *lab = self.progressNews.subviews[self.currentIndex];
+    
+    CGFloat offset = lab.center.x - self.progressNews.bounds.size.width *0.5;
+    CGFloat maxOffset = self.progressNews.contentSize.width - self.progressNews.bounds.size.width;
+    if (offset < 0) {
+        offset = 0;
+    }else if(offset > maxOffset){
+        offset = maxOffset;
+    }
+    
+    [self.progressNews setContentOffset:CGPointMake(offset, 0) animated:YES];
+    
 }
 
 #pragma mark 选择不同的界面 ， 出现对应的标题 协议方法
 - (void)topLabelDidSelected:(TSZTopLabel *)label{
     self.currentIndex = label.tag;
+    
     //滚动指定位置
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:label.tag inSection:0];
     
